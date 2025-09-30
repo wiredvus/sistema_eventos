@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($erro) && !empty($_FILES['imagem']['name']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
 
         // Tamanho maximo de uma imagem 2mb
-        $tamMax = 2 * 1024 * 124;
+        $tamMax = 2 * 1024 * 1024;
         // Se o arquivo for > Que o limite
         if ($_FILES['imagem']['size'] > $tamMax) {
             $erro = "Imagem ta grande em !! (Máx. 2mb)";
@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Criamos uma pasta para armazenar as imagens caso não exista
             // Migramos para esta pasta
 
-            $nomeOrignal = basename((string)$_FILES['imagem']['name']);
-            $nomeOrignal = preg_replace('/[^A-Za-z0-9_.-', '_', $nomeOrignal);
+            $nomeOriginal= basename((string)$_FILES['imagem']['name']);
+            $nomeOriginal= preg_replace('/[^A-Za-z0-9_.-', '_', $nomeOrignal);
             $nomeFinal = time() . '_' . $nomeOriginal;
 
             $destino = __DIR__ . '/uploads/' . $nomeFinal;
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $erro = "Falha ao salvar a imagem";
             }
         }
-        if ($empty($erro)) {
+        if (empty($erro)) {
             echo "DEU TUDO CERTOOOO";
         }
     }
@@ -72,25 +72,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form class="form" method="post" enctype="multipart/form-data">
                     <label for="campo" class="campo">
                         <span>Título</span>
-                        <input type="text" name="titulo" id="titulo" require>
+                        <input type="text" name="titulo" id="titulo" required>
                     </label>
                     <div class="dupla">
                         <label for="campo" class="campo">
                             <span>Data</span>
-                            <input type="date" name="data" id="data" require>
+                            <input type="date" name="data" id="data" required>
                         </label>
                         <label for="campo" class="campo">
                             <span>Hora</span>
-                            <input type="time" name="hora" id="hora" require>
+                            <input type="time" name="hora" id="hora" required>
                         </label>
                     </div>
                     <label for="campo" class="campo">
                         <span>Local</span>
-                        <input type="text" name="local" id="local" require>
+                        <input type="text" name="local" id="local" required>
                     </label>
                     <label class="campo">
                         <span>Descrição</span>
-                        <textarea name="descricao" rows="5" require></textarea>
+                        <textarea name="descricao" rows="5" required></textarea>
                     </label>
                     <label class="campo">
                         <span>Imagem do Evento (Opcional)</span>
