@@ -29,10 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Criamos uma pasta para armazenar as imagens caso não exista
             // Migramos para esta pasta
 
-            $nomeOriginal= basename((string)$_FILES['imagem']['name']);
-            $nomeOriginal= preg_replace('/[^A-Za-z0-9_.-', '_', $nomeOrignal);
+            $nomeOriginal = basename((string)$_FILES['imagem']['name']);
+            $nomeOriginal = preg_replace('/[^A-Za-z0-9_.-]/', '_', $nomeOriginal);
             $nomeFinal = time() . '_' . $nomeOriginal;
-
             $destino = __DIR__ . '/uploads/' . $nomeFinal;
 
             // Mover arquivo para a pasta
