@@ -167,7 +167,7 @@ if (is_file($arquivo)) {
     </div>
     <footer class="rodape">
         <div class="container">
-            <p>Feito em PHP pelo <a href="https://github.com/wiredvus">Vus</a> 🩷</p>
+            <p>Feito em PHP pelo <a href="https://github.com/wiredvus" target="_blank">Vus</a> 🩷</p>
         </div>
     </footer>
 </body>

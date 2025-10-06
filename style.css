@@ -132,7 +132,7 @@ textarea {
   color: #06210f;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 10px 22px #c97c5d56;
+  box-shadow: 0 10px 22px #573d3356;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .botao_primario:hover {
@@ -224,7 +224,7 @@ input[type="file"]::file-selector-button {
   border: 0;
   border-radius: 8px;
   background: var(--prim);
-  color: #06210f;
+  color: #020e06;
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
@@ -247,7 +247,7 @@ input[type="file"]::-webkit-file-upload-button {
   border: 0;
   border-radius: 8px;
   background: var(--prim);
-  color: #06210f;
+  color: #020e06;
   font-weight: 700;
   cursor: pointer;
 }
